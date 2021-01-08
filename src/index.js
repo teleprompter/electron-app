@@ -14,7 +14,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'teleprompter/index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'teleprompter/telepromptersoftware.htm'));
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
