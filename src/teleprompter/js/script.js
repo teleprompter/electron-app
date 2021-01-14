@@ -108,14 +108,14 @@ $(function() {
 	$('body').keydown(navigate);
 
 	$('.button.paste-toggle').click(function(evt) {
-		var initialValue = $.cookie('teleprompter_paste-plain-text');
+		var initialValue = $.cookie('teleprompter_paste-rich-text');
 		var newValue = (!initialValue || initialValue === 'false') ? true : false
-		$.cookie('teleprompter_paste-plain-text', newValue);
+		$.cookie('teleprompter_paste-rich-text', newValue);
 	});
 
 	$('#teleprompter').on('paste', function(e) {
-		var shouldPasteAsPlainText = $.cookie('teleprompter_paste-plain-text');
-		if (shouldPasteAsPlainText === 'true') {
+		var shouldPasteAsRichText = $.cookie('teleprompter_paste-rich-text');
+		if (shouldPasteAsRichText !== 'true') {
 			// cancel paste
 			e.preventDefault();
 		
