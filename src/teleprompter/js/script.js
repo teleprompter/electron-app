@@ -43,6 +43,7 @@ $(function() {
 		evt.stopPropagation();
 		return false;
 	});
+
 	function saveTextAsFile()
 	{
 		var node = document.getElementById('teleprompter');
@@ -106,15 +107,24 @@ $(function() {
 	$('#teleprompter').keyup(update_teleprompter);
 	$('body').keydown(navigate);
 
+	$('.button.paste-toggle').click(function(evt) {
+		var initialValue = $.cookie('teleprompter_paste-plain-text');
+		var newValue = (!initialValue || initialValue === 'false') ? true : false
+		$.cookie('teleprompter_paste-plain-text', newValue);
+	});
+
 	$('#teleprompter').on('paste', function(e) {
-		// cancel paste
-		e.preventDefault();
-	
-		// get text representation of clipboard
-		var text = (e.originalEvent || e).clipboardData.getData('text/plain');
-	
-		// insert text manually
-		document.execCommand('insertHTML', false, text);
+		var shouldPasteAsPlainText = $.cookie('teleprompter_paste-plain-text');
+		if (shouldPasteAsPlainText === 'true') {
+			// cancel paste
+			e.preventDefault();
+		
+			// get text representation of clipboard
+			var text = (e.originalEvent || e).clipboardData.getData('text/plain');
+		
+			// insert text manually
+			document.execCommand('insertHTML', false, text);
+		}
 	});
 
 	// Setup GUI
