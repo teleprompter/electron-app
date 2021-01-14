@@ -1,3 +1,11 @@
+$.cookie = function(key, value) {
+	if (value === undefined) {
+		return localStorage.getItem(key);
+	}
+
+	return localStorage.setItem(key, value);
+}
+
 var initPageSpeed = 35,
 	initFontSize = 60,
 	initMargin = 2,
