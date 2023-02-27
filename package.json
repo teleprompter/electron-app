@@ -1,11 +1,10 @@
 {
-  "name": "teleprompter-electron-app",
-  "productName": "teleprompter-electron-app",
+  "name": "my-app",
+  "productName": "my-app",
   "version": "1.0.0",
-  "description": "This project aims to bundle the teleprompter web app as as windows/mac desktop app.",
+  "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
-    "server": "http-server ./src/teleprompter -o",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
@@ -15,59 +14,18 @@
   "keywords": [],
   "author": {
     "name": "Gion",
-    "email": "bogdan.gradinariu@form3.tech"
+    "email": "bogdan.gradinariu@gmail.com"
   },
   "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "teleprompter_electron_app"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "bogdan.gradinariu@gmail.com",
-              "name": "teleprompter/electron-app"
-            },
-            "prerelease": true
-          }
-        }
-      ]
-    }
-  },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "@electron-forge/publisher-github": "^6.0.0-beta.54",
-    "electron": "11.1.1",
-    "http-server": "^0.12.3"
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
+    "electron": "23.1.1"
   }
 }
