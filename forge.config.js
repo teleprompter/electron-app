@@ -26,6 +26,7 @@ module.exports = {
         repository: {
           owner: "teleprompter",
           name: "electron-app",
+          tagPrefix: "ci",
         },
       },
     },
