@@ -15,7 +15,7 @@ jobs:
             artifact: ./out/make/zip/darwin/arm64/my-app-darwin-arm64-1.0.0.zip
           - os: windows
             runner: windows-latest
-            artifact: ./out/make/zip/darwin/arm64/my-app-darwin-arm64-1.0.0.zip
+            artifact: D:\a\electron-app\electron-app\out\make\*
 
     runs-on: ${{ matrix.runner }}
 
