@@ -7,8 +7,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - macos
           - windows
+          - macos
         include:
           - os: macos
             runner: macos-latest
@@ -40,3 +40,4 @@ jobs:
         with:
           name: ${{ matrix.os }}-${{ github.sha }}
           files: ${{ matrix.artifact }}
+          tag_name: ${{ github.ref_name }}.${{ github.run_number }}
